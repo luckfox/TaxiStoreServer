@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="TaxiStoreServer:war">
+    <output-path>d:/workspace/TaxiStoreServer/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>TaxiStoreServer</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="TaxiStoreServer-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="TaxiStoreServer:war exploded" />
+    </root>
+  </artifact>
+</component>

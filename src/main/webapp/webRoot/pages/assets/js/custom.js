@@ -1,13 +1,22 @@
 
-    function AllFormControlClean()
+function AllFormControlClean()
+{
+    console.log("AllFormControlClean 1.00");
+    $(".fc-0").each(function()
     {
-        $(".form-control").each(function()
+        //console.log("hello");
+        if($(this).prop("tagName")==='INPUT')
         {
-            $(this).attr("value","");
+            //console.log("AllFormControlClean ;INPUT; #"+$(this).prop("id"))
             $(this).val("");
-        });
-        $(".form-select").html("");
-    }
+        }else if($(this).prop("tagName")==='LABEL')
+        {
+            //console.log("AllFormControlClean ;LABEL; #"+$(this).prop("id"));
+            $(this).html("");
+        }
+    });
+    $(".form-select").empty();
+}
     /*
      *  用途：針對具有.update-enabled，表示該元素為能編輯的，當enable為ture時，
      *  將元素改為能編輯狀態，並且字體顏色設為黃色。
@@ -20,6 +29,10 @@
 
             const label = $(this).parent().find("label");
             label.css("color", enable ? "yellow" : "white");
+        });
+        $(".fc-1").each(function()
+        {
+            !enable?$(this).removeAttr("disabled"):$(this).attr("disabled","disabled");
         });
     }
     // 通用函数：设置按钮状态
@@ -85,82 +98,4 @@
         }
         console.log("Fetching delete item for serialNo=" + serialNo);
         fetchCarData(servletUrl,actionName, serialNo, callback);
-    }
-
-    /**
-     * 處理提交邏輯
-     * @param {number} mode - 0: 新增, 1: 更新
-     * @param {string} servlet - 處理請求的 Servlet 名稱
-     * @param {function} callback - Ajax 請求的回呼函式
-     */
-    function submitButtonHandler(mode, servlet, callback)
-    {
-
-        let submit_OK = true;
-        console.log(`submit mode=${mode} servlet=${servlet}`);
-        // 1. 清除所有欄位的樣式
-        $("input").css("border-color", "").css("border-width", "");
-
-        // 2. 檢查必填欄位是否有空值
-        $("input[required]").each(function () {
-            if ($(this).val().trim() === "") {
-                submit_OK = false;
-                $(this).css("border-color", "yellow").css("border-width", "medium");
-            }
-        });
-        if (!submit_OK) return; // 若有必填欄位未填，終止操作
-
-        // 3. 檢查 pattern 屬性的規範
-        $("input[pattern]").each(function () {
-            const pattern = $(this).attr("pattern");
-            const regex = new RegExp(pattern);
-            if (!regex.test($(this).val().trim())) {
-                submit_OK = false;
-                $(this).css("border-color", "red").css("border-width", "medium");
-            }
-        });
-        if (!submit_OK) return; // 若有欄位不符合規範，終止操作
-
-        // 4. 禁能所有 update-enabled 的欄位
-        toggleInputs(false);
-
-        // 5. 啟用其他按鈕，禁用提交按鈕
-        $("#next-button, #previous-button, #update-button, #add-button, #delete-button").removeAttr("disabled");
-        $("#submit-button").attr("disabled", "disabled");
-
-        // 6. 組裝提交參數
-        let parameters = "";
-        $(".update-enabled[name]").each(function () {
-            const name = $(this).attr("name");
-            const value = $(this).val().trim();
-            //if (value) parameters += `&${name}=${encodeURIComponent(value)}`;
-            if (value) parameters += `&${name}=${value}`;
-        });
-
-        // 7. 根據 mode (0: 新增, 1: 更新) 處理不同的提交邏輯
-        switch (mode) {
-            case 0: // 新增模式
-                parameters = `action=ajaxUpdateItem&companyseq=0${parameters}`;
-                console.log("新增模式，參數: " + parameters);
-                $.getJSON(`${servlet}`, parameters, callback);
-                $("#add-button").html("新增 <i class=\"ft-plus-circle position-right\"></i>");
-                break;
-
-            case 1: // 更新模式
-                const serialNo = $("#serialNoTitle").text().trim();
-                if (!serialNo) {
-                    alert("無法取得序列號，無法進行更新。");
-                    return;
-                }
-                parameters = `action=ajaxUpdateItem&companyseq=${serialNo}${parameters}`;
-                console.log("@更新模式，參數: " + parameters);
-                $.getJSON(`${servlet}`, parameters, callback);
-                $("#update-button").html("更新 <i class=\"ft-refresh-cw position-right\"></i>");
-                break;
-
-            default:
-                console.error("未知的模式，無法執行操作。");
-                alert("提交模式有誤，請檢查程式碼設定！");
-                return;
-        }
     }
