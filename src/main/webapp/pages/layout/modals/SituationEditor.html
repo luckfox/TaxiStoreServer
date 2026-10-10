@@ -1,0 +1,96 @@
+
+<div id="SituationEditor" class="modal fade" tabindex="-1" role="dialog" >
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content bg-dark text-white" style="border: 2px solid white;"> <!-- 加入白色邊框 -->
+            <div class="modal-header">
+                <h3 class="modal-title text-white">掛牌車訊息</h3>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="editForm">
+                    <div class="row ">
+                        <!-- userId -->
+                        <div class="input-group col-md-4 mt-1">
+                            <label for="carno" class="input-group-text ">車號</label>
+                            <input type=hidden  id="serialID" data-serialId="" value=""  >
+                            <input type=hidden  id="carseq" data-carseq="" value=""  >
+                            <input type="text" id="carno"  data-carno="" class="form-control fc-0" aria-describedby="basic-addon1" readonly >
+                        </div>
+                        <div class="input-group col-md-4 mt-1">
+                            <label for="driverName" class="input-group-text ">駕駛員</label>
+                            <input type=hidden  id="driverseq" data-driverseq="" value=""  >
+                            <input type="text" id="driverName" data-displayname="" class="form-control fc-0" aria-describedby="basic-addon1" readonly >
+                        </div>
+                        <div class="input-group col-md-4  mt-1">
+
+                            <label for="specialCode" class="input-group-text">特別碼</label>
+                            <input type="text" id="specialCode" name="specialCode" data-driverSC="" class="form-control fc-0"  >
+                            <!-- List container for search results -->
+                            <ul class="dropdown-menu list-window w-25" id="autocomplete-list-driverSC"/>
+                        </div>
+                    </div>
+
+                    <div class="row ">
+                        <!-- driverPortable -->
+                        <div class="input-group col-md-6 mt-1">
+                            <label class="input-group-text " for="companyName">所屬車行</label>
+                            <input type=hidden  id="companyseq" data-carseq="" value=""  >
+                            <input type="text" class="form-control  fc-0"
+                                   id="companyName" name="companyName" aria-describedby="basic-addon1" readonly>
+                        </div>
+                        <div class="input-group col-md-6 mt-1">
+                            <label class="input-group-text " for="status">現況</label>
+                            <select class="update-enabled form-select fc-0" disabled="disabled" id="status" name="status">
+                                <option value="0" >日</option>
+                                <option value="1" >夜</option>
+                                <option value="2" >靠行</option>
+                                <option value="3" >合作社</option>
+                                <option value="4" >租送</option>
+                                <option value="5" >包月</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row ">
+
+                        <div class="input-group col-md-6 mt-1">
+                            <label class="input-group-text ">繳銷日</label>
+                            <input type="date" class="form-control  fc-0"
+                                   id="terminateDate" name="terminateDate" aria-describedby="basic-addon1" readonly>
+                        </div>
+                        <!-- driverName -->
+                        <div class="input-group col-md-6 mt-1">
+                            <label class="input-group-text ">掛牌日</label>
+                            <input type="date" class="form-control  fc-0"
+                                   id="giveCarDate" name="giveCarDate" aria-describedby="basic-addon1" readonly>
+                        </div>
+                    </div>
+                    <div class="row ">
+                        <!-- driverSC -->
+                        <div class="input-group col-md-6 mt-1">
+                            <label for="recvDeposit" class="input-group-text">以收保證金</label>
+                            <input type="text" id="recvDeposit" name="recvDeposit" data-driverSC="" class="form-control fc-0"  >
+                        </div>
+                        <!-- driverID -->
+                        <div class="input-group col-md-6  mt-1">
+                            <label for="retDeposit" class="input-group-text ">預退保證金</label>
+                            <input type="text" id="retDeposit" name="retDeposit" data-driverID="" class="form-control fc-0" >
+
+                        </div>
+                    </div>
+
+                    <div class="row ">
+                        <!-- Tag (佔據兩倍寬度) -->
+                        <div class="input-group col-md-12  mt-1">
+                            <label for="tag" class="input-group-text ">標籤</label>
+                            <input type="text" id="tag" name="tag" data-tag="" class="form-control fc-0">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
+                <button type="submit" id="btnSubmit" class="btn btn-primary">儲存</button>
+            </div>
+        </div>
+    </div>
+</div>

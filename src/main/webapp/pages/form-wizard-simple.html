@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html class="loading" lang="en" data-textdirection="ltr" xmlns="http://www.w3.org/1999/html">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta name="description" content="Chameleon Admin is a modern Bootstrap 4 webapp &amp; admin dashboard html template with a large number of components, elegant design, clean and organized code.">
+    <meta name="keywords" content="admin template, Chameleon admin template, dashboard template, gradient admin template, responsive admin template, webapp, eCommerce dashboard, analytic dashboard">
+    <meta name="author" content="ThemeSelect">
+    <title>Form Wizard - Chameleon Admin - Modern Bootstrap 4 WebApp & Dashboard HTML Template + UI Kit</title>
+    <link rel="apple-touch-icon" href="app-assets/images/ico/apple-icon-120.png">
+    <link rel="shortcut icon" type="image/x-icon" href="app-assets/images/ico/favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,300i,400,400i,600,600i,700,700i%7CComfortaa:300,400,700" rel="stylesheet">
+    <link href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css" rel="stylesheet">
+    <!-- BEGIN VENDOR CSS-->
+    <link rel="stylesheet" type="text/css" href="app-assets/css/vendors.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/pickers/daterange/daterangepicker.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/pickers/pickadate/default.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/pickers/pickadate/default.date.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/vendors/css/pickers/pickadate/default.time.css">
+      <!-- END VENDOR CSS-->
+    <!-- BEGIN CHAMELEON  CSS-->
+    <link rel="stylesheet" type="text/css" href="app-assets/css/app.css">
+    <!-- END CHAMELEON  CSS-->
+    <!-- BEGIN Page Level CSS-->
+    <link rel="stylesheet" type="text/css" href="app-assets/css/core/menu/menu-types/vertical-menu-modern.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/core/colors/palette-gradient.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/plugins/forms/wizard.css">
+    <link rel="stylesheet" type="text/css" href="app-assets/css/plugins/pickers/daterange/daterange.css">
+    <!-- END Page Level CSS-->
+    <!-- BEGIN Custom CSS-->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <!-- END Custom CSS-->
+      <script src="assets/js/jquery-3.4.1.min.js" type="text/javascript"></script>
+      <script src="assets/js/String.format.js" type="text/javascript"></script>
+      <script src="assets/js/carousel.js" type="text/javascript"></script>
+      <script src="assets/js/uploadFile.js" type="text/javascript"></script>
+      <!--<script src="./src/js/core/libraries/jquery.min.js"></script>-->
+      <script type="text/javascript">
+          //reset the input-filelist
+          $(function()
+          {
+
+          });
+
+      </script>
+      <style>
+          .card-footer,.card-body
+          {
+              padding:5px;
+          }
+          #icon-tabs .card-title
+          {
+              font-size:32px;
+          }
+          .card-body .form-control
+          {
+              background-color:lightslategray;
+              color:white;
+              font-size:18px;
+          }
+          #icon-tabs label
+          {
+              font-size:18px;
+              color:white;
+          }
+          .card-body .content-review
+          {
+              color:white;
+          }
+          .upload-img
+          {
+              width: 360px;
+              height:240px;
+              object-fit: cover;
+          }
+
+      </style>
+
+
+  </head>
+  <body class="vertical-layout vertical-menu-modern 2-columns   menu-expanded fixed-navbar" data-open="click" data-menu="vertical-menu-modern" data-color="bg-gradient-x-purple-red" data-col="2-columns">
+
+
+    <!-- ////////////////////////////////////////////////////////////////////////////-->
+
+
+    <div class="app-content content">
+      <div class="content-wrapper">
+        <div class="content-wrapper-before"></div>
+        <div class="content-header row">
+          <div class="content-header-left col-md-8 col-12 mb-2 breadcrumb-new">
+            <h3 class="content-header-title mb-0 d-inline-block">Form Wizard</h3>
+            <div class="row breadcrumbs-top d-inline-block">
+              <div class="breadcrumb-wrapper mr-1">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="index.jsp">Home</a>
+                  </li>
+                  <li class="breadcrumb-item"><a href="#">Forms</a>
+                  </li>
+                  <li class="breadcrumb-item active">Form Wizard 
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </div>
+          <div class="content-header-right col-md-4 col-12"> <a class="btn btn-warning btn-min-width float-md-right box-shadow-4 mr-1 mb-1" href="chat-application.html"><i class="ft-mail"></i> Email</a></div>
+        </div>
+        <div class="content-body">
+            <!-- Form wizard with icon tabs section start -->
+            <section id="icon-tabs">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card bg-dark text-white">
+                            <div class="card-header bg-dark text-white">
+                            <div class="card-title bg-dark text-white" >司機基本資料</div>
+                            <a class="heading-elements-toggle"><i class="la la-ellipsis-h font-medium-3"></i></a>
+                                <div class="heading-elements">
+                                    <ul class="list-inline mb-0">
+                                        <!--摺疊-->
+                                        <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
+                                        <!--刷新-->
+                                        <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
+                                        <!--Zoom in/out -->
+                                        <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
+                                        <!-- exit -->
+                                        <li><a data-action="close"><i class="ft-x"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-content collapse show">
+                                <div class="card-body">
+                                    <form action="#" class="steps-validation wizard " style="font-size:20px;">
+
+                                    <!-- Step 1 -->
+                                    <h6 ><i class="step-icon  ft-home "></i>基本資料填寫</h6>
+                                    <fieldset>
+                                        <!-- row 1  -->
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label for="DriverName">姓名 :*</label>
+                                                    <input type="text"  class="form-control" id="DriverName" name="DriverName" >
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class=" form-group">
+                                                    <label for="Birthday">出生日期 :*</label>
+                                                    <div class="input-group">
+
+                                                        <div class="input-group-prepend " style="height:47px" >
+										                    <span class="input-group-text " style="background-color:lightslategray " >
+											                    <span class="la la-calendar-o"></span>
+										                    </span>
+                                                        </div>
+                                                        <input type='text' class="form-control pickadate" style="background-color:lightslategray ; color:white"  placeholder="西元日期" id="Birthday" name="Birthday" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label  for="Passid">身分證號碼 :*</label>
+                                                    <input type="text" class="form-control" id="Passid" name="Passid" >
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <!-- end of row 1 -->
+
+                                        <!-- row 2 -->
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label for="HouseHoldPhone">戶籍電話</label>
+                                                    <input type="email" class="form-control" id="HouseHoldPhone" name="HouseHoldPhone">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="form-group">
+                                                    <label for="HouseHoldAddress">戶籍地址</label>
+                                                    <input type="email" class="form-control" id="HouseHoldAddress" name="HouseHoldAddress" >
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- end of row 2 -->
+
+                                        <!-- row 3 -->
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label for="CellPhone">手機電話</label>
+                                                    <input type="email" class="form-control" id="CellPhone" name="CellPhone">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="form-group">
+                                                    <label for="CurrentAddress">通訊地址</label>
+                                                    <input type="email" class="form-control" id="CurrentAddress" name="CurrentAddress">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- end of row 3 -->
+
+                                        <!-- row 4 -->
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="UrgentContacter">緊急聯絡人</label>
+                                                    <input type="email" class="form-control" id="UrgentContacter" name="UrgentContacter">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="UrgentContacterPhone">緊急連絡人電話</label>
+                                                    <input type="email" class="form-control" id="UrgentContacterPhone" name="UrgentContacterPhone">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- end of row 4 -->
+                                    </fieldset>
+
+                                    <!-- Step 2 -->
+                                    <h6><i class="step-icon ft-file-text"></i>受雇資料</h6>
+                                    <fieldset>
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label for="EmployLicenceNo">受雇車號 :</label>
+                                                    <input type="text" class="form-control" id="EmployLicenceNo" name="EmployLicenceNo">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="EmployCompany">受雇車行 :</label>
+                                                    <select class="custom-select form-control" id="EmployCompany" data-placeholder="選擇車行" name="EmployCompany">
+                                                        <option value="no1">大中原車行</option>
+                                                        <option value="no2">天子交通</option>
+                                                        <option value="no3">祥德汽車</option>
+                                                        <option value="no4">勝順汽車</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label>受雇日期 :</label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+										                    <span class="input-group-text">
+											                    <span class="la la-calendar-o"></span>
+										                    </span>
+                                                        </div>
+                                                        <input type='text' class="form-control pickadate " placeholder="西元日期" aria-required="true"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+
+                                        </div>
+                                        <div class="row">
+
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label for="Remark">補充說明:</label>
+                                                    <textarea name="shortDescription" id="Remark" rows="8" class="form-control" name="Remark"></textarea>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </fieldset>
+
+                                    <!-- Step 3 -->
+                                    <h6><i class="step-icon ft-activity"></i>資料上傳</h6>
+                                    <fieldset>
+                                        <div class="row">
+                                            <!-- Header footer section start -->
+                                            <div class="content-body">
+                                                <section id="header-footer">
+                                                    <div class="row match-height">
+
+                                                        <!--start of 身分證-->
+                                                        <div class="col-xl-3 col-md-12">
+                                                            <div class="card" id="card0">
+                                                                <div class="card-body">
+                                                                    <h2 class="card-title">國民身分證件</h2>
+                                                                    <!--<h2 text-white>國民身分證件</h2>-->
+                                                                    <h4 class="card-subtitle">請拍攝或輸入身分證件正反兩面</h4>
+                                                                </div>
+                                                                <div id="carousel-area0" class="carousel slide" data-ride="carousel">
+
+                                                                    <!--<ol class="carousel-indicators">-->
+                                                                    <!--<li data-target="#carousel-area" data-slide-to="0" class="active"></li>-->
+                                                                    <!--<li data-target="#carousel-area" data-slide-to="1"></li>-->
+                                                                    <!--<li data-target="#carousel-area" data-slide-to="2"></li>-->
+                                                                    <!--</ol>-->
+                                                                    <div class="carousel-inner" role="listbox">
+                                                                        <div class="carousel-item active">
+                                                                            <img src="./image/noimage.jpg"  class="img-fluid rounded-start upload-img" alt="...">
+                                                                        </div>
+                                                                    </div>
+                                                                    <a class="carousel-control-prev" href="#carousel-area0" role="button" data-slide="prev">
+                                                                        <span class="la la-angle-left" aria-hidden="true"></span>
+                                                                        <span class="sr-only">Previous</span>
+                                                                    </a>
+                                                                    <a class="carousel-control-next" href="#carousel-area0" role="button" data-slide="next">
+                                                                        <span class="la la-angle-right icon-next" aria-hidden="true"></span>
+                                                                        <span class="sr-only">Next</span>
+                                                                    </a>
+                                                                </div>
+
+                                                                <div id="card-footer0" class="card-footer border-top-blue-grey border-top-lighten-5 text-muted">
+                                                                    <input type="file" id="input0" class="browserFile btn-success"  accept="image/*" multiple style="width:100%;margin-bottom: 10px">
+                                                                    <div>
+                                                                        <button type="button" class="btn btn-primary btn-sm uploadFile">上傳</button>
+                                                                        <button type="button" class="btn btn-secondary btn-sm clearFile2">清空</button>
+                                                                    </div>
+                                                                    <div class="progress" style="margin-top:10px">
+                                                                        <div  class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="0" aria-valuemin="0"
+                                                                              aria-valuemax="100" style="width:0%"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!--end of 身分證-->
+                                                        <!--start of 職業駕照-->
+                                                        <div class="col-xl-3 col-md-12">
+                                                            <div class="card" id="card1">
+                                                                <div class="card-body">
+                                                                    <h2 class="card-title">職業駕照登錄</h2>
+                                                                    <h4 class="card-subtitle">請拍攝或輸入職業駕照正反兩面</h4>
+                                                                </div>
+                                                                <div id="carousel-area1" class="carousel slide" data-ride="carousel">
+
+                                                                    <!--<ol class="carousel-indicators">-->
+                                                                    <!--<li data-target="#carousel-area" data-slide-to="0" class="active"></li>-->
+                                                                    <!--<li data-target="#carousel-area" data-slide-to="1"></li>-->
+                                                                    <!--<li data-target="#carousel-area" data-slide-to="2"></li>-->
+                                                                    <!--</ol>-->
+                                                                    <div class="carousel-inner" role="listbox">
+                                                                        <div class="carousel-item active">
+                                                                            <img  src="./image/noimage.jpg"   class="img-fluid rounded-start upload-img" alt="...">
+                                                                        </div>
+                                                                    </div>
+                                                                    <a class="carousel-control-prev" href="#carousel-area1" role="button" data-slide="prev">
+                                                                        <span class="la la-angle-left" aria-hidden="true"></span>
+                                                                        <span class="sr-only">Previous</span>
+                                                                    </a>
+                                                                    <a class="carousel-control-next" href="#carousel-area1" role="button" data-slide="next">
+                                                                        <span class="la la-angle-right icon-next" aria-hidden="true"></span>
+                                                                        <span class="sr-only">Next</span>
+                                                                    </a>
+                                                                </div>
+                                                                <div id="card-footer1" class="card-footer border-top-blue-grey border-top-lighten-5 text-muted">
+                                                                    <input type="file" id="input1" class="browserFile btn-success" accept="image/*" multiple style="width:100% ;margin-bottom: 10px">
+                                                                    <div>
+                                                                        <button type="button" class="btn btn-primary btn-sm uploadFile">上傳</button>
+                                                                        <button type="button" class="btn btn-secondary btn-sm clearFile2">清空</button>
+                                                                    </div>
+                                                                    <div class="progress" style="margin-top:10px">
+                                                                        <div  class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="0" aria-valuemin="0"
+                                                                              aria-valuemax="100" style="width:0%">
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!--endo of 職業駕照-->
+                                                        <!--start of 登記證-->
+                                                        <div class="col-xl-3 col-md-12">
+                                                            <div class="card" id="card2">
+                                                                <div class="card-body">
+                                                                    <h2 class="card-title">職業登記證登錄</h2>
+                                                                    <h4 class="card-subtitle">請拍攝或輸入職業登記證正反兩面</h4>
+                                                                </div>
+                                                                <div id="carousel-area2" class="carousel slide" data-ride="carousel">
+
+                                                                    <!--<ol class="carousel-indicators">-->
+                                                                    <!--<li data-target="#carousel-area" data-slide-to="0" class="active"></li>-->
+                                                                    <!--<li data-target="#carousel-area" data-slide-to="1"></li>-->
+                                                                    <!--<li data-target="#carousel-area" data-slide-to="2"></li>-->
+                                                                    <!--</ol>-->
+                                                                    <div class="carousel-inner" role="listbox">
+                                                                        <div class="carousel-item active">
+                                                                            <img  src="./image/noimage.jpg"   class="img-fluid rounded-start upload-img" alt="...">
+                                                                        </div>
+                                                                    </div>
+                                                                    <a class="carousel-control-prev" href="#carousel-area2" role="button" data-slide="prev">
+                                                                        <span class="la la-angle-left" aria-hidden="true"></span>
+                                                                        <span class="sr-only">Previous</span>
+                                                                    </a>
+                                                                    <a class="carousel-control-next" href="#carousel-area2" role="button" data-slide="next">
+                                                                        <span class="la la-angle-right icon-next" aria-hidden="true"></span>
+                                                                        <span class="sr-only">Next</span>
+                                                                    </a>
+                                                                </div>
+                                                                <div id="card-footer2" class="card-footer border-top-blue-grey border-top-lighten-5 text-muted">
+                                                                    <input type="file" id="input2" class="browserFile btn-success" accept="image/*" multiple style="width:100%;margin-bottom: 10px">
+                                                                    <div>
+                                                                        <button type="button" class="btn btn-primary btn-sm uploadFile">上傳</button>
+                                                                        <button type="button" class="btn btn-secondary btn-sm clearFile2">清空</button>
+                                                                    </div>
+                                                                    <div class="progress" style="margin-top:10px">
+                                                                        <div  class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="0" aria-valuemin="0"
+                                                                              aria-valuemax="100" style="width:0%">
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!--endo of 登記證-->
+                                                        <!--start of 契約書-->
+                                                        <div class="col-xl-3 col-md-12">
+                                                            <div class="card" id="card3">
+                                                                <div class="card-body">
+                                                                    <h2 class="card-title">租賃靠行契約書</h2>
+                                                                    <h4 class="card-subtitle">請拍攝或輸入租賃靠行契約書正反兩面</h4>
+                                                                </div>
+                                                                <div id="carousel-area3" class="carousel slide" data-ride="carousel">
+
+                                                                    <!--<ol class="carousel-indicators">-->
+                                                                    <!--<li data-target="#carousel-area" data-slide-to="0" class="active"></li>-->
+                                                                    <!--<li data-target="#carousel-area" data-slide-to="1"></li>-->
+                                                                    <!--<li data-target="#carousel-area" data-slide-to="2"></li>-->
+                                                                    <!--</ol>-->
+                                                                    <div class="carousel-inner" role="listbox">
+                                                                        <div class="carousel-item active">
+                                                                            <img  src="./image/noimage.jpg"   class="img-fluid rounded-start upload-img" alt="...">
+                                                                        </div>
+                                                                    </div>
+                                                                    <a class="carousel-control-prev" href="#carousel-area3" role="button" data-slide="prev">
+                                                                        <span class="la la-angle-left" aria-hidden="true"></span>
+                                                                        <span class="sr-only">Previous</span>
+                                                                    </a>
+                                                                    <a class="carousel-control-next" href="#carousel-area3" role="button" data-slide="next">
+                                                                        <span class="la la-angle-right icon-next" aria-hidden="true"></span>
+                                                                        <span class="sr-only">Next</span>
+                                                                    </a>
+                                                                </div>
+                                                                <div id="card-footer3" class="card-footer border-top-blue-grey border-top-lighten-5 text-muted" style="padding:5px">
+                                                                    <input type="file" id="input3" class="browserFile btn-success" accept="image/*" multiple style="width:100%;margin-bottom: 10px">
+                                                                    <div>
+                                                                        <button type="button" class="btn btn-primary btn-sm uploadFile">上傳</button>
+                                                                        <button type="button" class="btn btn-secondary btn-sm clearFile2">清空</button>
+                                                                    </div>
+                                                                    <div class="progress" style="margin-top:10px">
+                                                                        <div  class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="0" aria-valuemin="0"
+                                                                              aria-valuemax="100" style="width:0%">
+
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!--endo of 契約書-->
+
+                                                    </div>
+                                                </section>
+                                                <!-- Header footer section end -->
+
+                                            </div>
+                                        </div>
+                                    </fieldset>
+
+                                    <!-- Step 4 -->
+                                    <h6><i class="step-icon ft-box"></i>核對並存檔</h6>
+                                    <fieldset>
+                                        <div class="row">
+                                            <div class="col-md-6 col-sm-12">
+                                                <div class="card bg-black">
+                                                    <div class="card-content">
+                                                        <div class="card-body">
+                                                            <h2 class="mb-1 content-review">基本資料</h2>
+                                                            <ul>
+                                                                <li><h2 class="content-review"><span >姓名:</span><span id="name">王朝永</span></h2></li>
+                                                                <li><h2 class="content-review"><span>出生日期:</span><span id="birthday">66/4/23</span></h2></li>
+                                                                <li><h2 class="content-review"><span>身分證號碼:</span><span id="passId">A122731470</span></h2></li>
+                                                                <li><h2 class="content-review"><span>戶籍電話:</span></h2><span id="phoneHousehold"></span></li>
+                                                                <li><h2 class="content-review"><span>戶籍地址:</span><span id="addressHousehold">台北市重慶北路三段223巷3號</span></h2></li>
+                                                                <li><h2 class="content-review"><span>手機1:</span><span id="cellPhone1">0971672310</span></h2></li>
+                                                                <li><h2 class="content-review"><span>現居地址:</span><span id="addressCurrent">台北市重慶北路三段223巷3號</span></h2></li>
+                                                            </ul>
+                                                            <div id="round-disabled"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-sm-12">
+                                                <div class="card bg-black">
+                                                    <div class="card-content">
+                                                        <div class="card-body ">
+                                                            <h2 class="mb-1 content-review">受雇資料</h2>
+                                                            <ul>
+                                                                <li><h2 class="content-review"><span >受雇車行:</span><span id="company">大中原交通</span></h2></li>
+                                                                <li><h2 class="content-review"><span>受雇日期:</span><span id="empdate">66/4/23</span></h2></li>
+                                                                <li><h2 class="content-review"><span>受雇車號:</span><span id="licenceNo">TDN-168</span></h2></li>
+                                                                <li><h2 class="content-review"><span>備註:</span><span id="remark">無</span></h2></li>
+                                                            </ul>
+                                                            <div id="round-disabled"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </fieldset>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Form wizard with icon tabs section end -->
+
+
+        </div>
+      </div>
+    </div>
+    <!-- ////////////////////////////////////////////////////////////////////////////-->
+
+
+
+    <!-- BEGIN VENDOR JS-->
+    <script src="app-assets/vendors/js/vendors.min.js" type="text/javascript"></script>
+    <!-- BEGIN VENDOR JS-->
+    <!-- BEGIN PAGE VENDOR JS-->
+    <script src="app-assets/vendors/js/extensions/jquery.steps.min.js" type="text/javascript"></script>
+    <script src="app-assets/vendors/js/pickers/dateTime/moment-with-locales.min.js" type="text/javascript"></script>
+    <script src="app-assets/vendors/js/pickers/daterange/daterangepicker.js" type="text/javascript"></script>
+    <script src="app-assets/vendors/js/forms/validation/jquery.validate.min.js" type="text/javascript"></script>
+    <script src="app-assets/vendors/js/pickers/pickadate/picker.js" type="text/javascript"></script>
+    <script src="app-assets/vendors/js/pickers/pickadate/picker.date.js" type="text/javascript"></script>
+    <script src="app-assets/vendors/js/pickers/pickadate/picker.time.js" type="text/javascript"></script>
+    <script src="app-assets/vendors/js/pickers/pickadate/legacy.js" type="text/javascript"></script>
+    <!-- END PAGE VENDOR JS-->
+    <!-- BEGIN CHAMELEON  JS-->
+    <script src="app-assets/js/core/app-menu.js" type="text/javascript"></script>
+    <script src="app-assets/js/core/app.js" type="text/javascript"></script>
+    <!-- END CHAMELEON  JS-->
+    <!-- BEGIN PAGE LEVEL JS-->
+    <script src="app-assets/js/scripts/forms/wizard-steps.js" type="text/javascript"></script>
+    <script src="app-assets/js/scripts/pickers/dateTime/pick-a-datetime.js" type="text/javascript"></script>
+    <!-- END PAGE LEVEL JS-->
+    <!-- BEGIN CUSTOM JS-->
+    <script src="./assets/js/String.format.js"></script>
+
+    <!-- END OF CUSTOM JS-->
+  </body>
+</html>

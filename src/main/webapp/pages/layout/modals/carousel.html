@@ -1,0 +1,33 @@
+<!-- Modal 顯示圖片 Carousel -->
+<div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">已上傳圖片</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="關閉">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <button type="button" id="updateImageBtn" class="btn btn-sm btn-secondary ml-2" title="更新後台">
+                    <i class="fas fa-sync-alt"></i> 更新
+                </button>
+                <!-- 🔄 旋轉按鈕（建議位置）-->
+                <button type="button" id="rotateImageBtn" class="btn btn-sm btn-secondary ml-2" title="旋轉圖片">
+                    <i class="fas fa-sync-alt"></i> 旋轉2
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="carouselImages" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner" id="carouselInner">
+                        <!-- 圖片會插入在這 -->
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselImages" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselImages" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

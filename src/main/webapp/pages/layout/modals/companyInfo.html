@@ -1,0 +1,81 @@
+
+<div id="companyInfo" class="modal fade" tabindex="-1" role="dialog" >
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content bg-dark text-white" style="border: 2px solid white;"> <!-- 加入白色邊框 -->
+            <div class="modal-header">
+                <h3 class="modal-title text-white">公司訊息</h3>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="editForm">
+                    <div class="row mt-0 ">
+                        <!-- companyname -->
+                        <div class="input-group col-md-4 mb-2">
+                            <label for="companyname" class="input-group-text ">公司名稱</label>
+                            <input type=hidden  id="companyseq"  value=""  >
+                            <input type="text" id="companyname"   class="form-control fc-0" aria-describedby="basic-addon1" readonly >
+                        </div>
+                        <!-- specialcode 特別碼-->
+                        <div class="input-group col-md-4 mb-2">
+                            <label for="specialcode" class="input-group-text ">特別碼</label>
+                            <input type="text" id="specialcode"  class="form-control fc-0" aria-describedby="basic-addon1" readonly >
+                        </div>
+                        <div class="input-group col-md-4 mb-2">
+                            <label class="input-group-text " for="str_createdate">建檔日期</label>
+                            <input type="text" class="form-control  fc-0"
+                                   id="str_createdate" name="str_createdate"    aria-describedby="basic-addon1" readonly>
+                        </div>
+                    </div>
+
+                    <div class="row mt-0">
+                        <!-- banno -->
+                        <div class="input-group col-md-4 mb-1">
+                            <label class="input-group-text " for="banno">統一編號</label>
+                            <input type="text" class="form-control  fc-0"
+                                   id="banno" name="banno"   aria-describedby="basic-addon1" readonly>
+                        </div>
+                        <!-- taxno -->
+                        <div class="input-group col-md-4 mb-1">
+                            <label class="input-group-text " for="taxno">稅籍號碼</label>
+                            <input type="text" class="form-control  fc-0"
+                                   id="taxno" name="taxno" aria-describedby="basic-addon1" readonly>
+                        </div>
+                        <!-- ownerName -->
+                        <div class="input-group col-md-4 mb-1">
+                            <label class="input-group-text " for="ownerName">所屬公司</label>
+                            <input type="text" class="form-control  fc-0"
+                                   id="ownerName" name="ownerName" aria-describedby="basic-addon1" readonly>
+                        </div>
+                    </div>
+
+                    <div class="row mt-0">
+                        <!-- telno -->
+                        <div class="input-group col-md-4  mb-1">
+                            <label for="telno" class="input-group-text">電話號碼</label>
+                            <input type="text" id="telno" name="telno" class="form-control update-enabled fc-0"  >
+                        </div>
+                        <!-- portable -->
+                        <div class="input-group col-md-4  mb-1">
+                            <label for="portable" class="input-group-text ">行動電話</label>
+                            <input type="text" id="portable" name="portable"  class="form-control update-enabled fc-0" >
+                        </div>
+                        <div class="input-group col-md-4  mb-1">
+                            <label for="faxno" class="input-group-text ">傳真號碼</label>
+                            <input type="text" id="faxno" name="faxno"  class="form-control update-enabled fc-0" >
+                        </div>
+                    </div>
+                    <div class="row mt-0">
+                        <!-- remark (佔據兩倍寬度) -->
+                        <div class="input-group col-md-12  mb-1">
+                            <label for="remark" class="input-group-text ">說明</label>
+                            <input type="text" id="remark" name="remark"  class="form-control update-enabled fc-0">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+              name="bussiness_tax_p2_report" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="30" rightMargin="30" topMargin="20" bottomMargin="20" uuid="fcd00e9e-c702-490e-89cf-f75f4b000001">
+
+    <!-- Parameters -->
+    <parameter name="CompanyName" class="java.lang.String"/>
+    <parameter name="BussinessNo" class="java.lang.String"/>
+    <parameter name="StartDate" class="java.sql.Timestamp"/>
+    <parameter name="DateOfFilling" class="java.sql.Timestamp"/>
+    <parameter name="PersionInCharge" class="java.lang.String"/>
+    <parameter name="TaxNo" class="java.lang.String"/>
+    <parameter name="Address" class="java.lang.String"/>
+    <parameter name="PhoneNo" class="java.lang.String"/>
+
+    <!-- Fields for monthly data -->
+    <field name="Month" class="java.lang.String"/>
+    <field name="Company" class="java.lang.Integer"/>
+    <field name="VolumeOfCompany" class="java.lang.Integer"/>
+    <field name="Reliable" class="java.lang.Integer"/>
+    <field name="VolumeOfReliable" class="java.lang.Integer"/>
+
+    <!-- Title Band -->
+    <title>
+        <band height="60">
+            <textField>
+                <reportElement x="0" y="10" width="535" height="20"/>
+                <textFieldExpression><![CDATA[$P{CompanyName} + " 營業稅申報表"]]></textFieldExpression>
+            </textField>
+        </band>
+    </title>
+
+    <!-- Page Header -->
+    <pageHeader>
+        <band height="100">
+            <staticText><reportElement x="0" y="0" width="100" height="15"/><text><![CDATA[統一編號:]]></text></staticText>
+            <textField><reportElement x="100" y="0" width="200" height="15"/><textFieldExpression><![CDATA[$P{BussinessNo}]]></textFieldExpression></textField>
+            <staticText><reportElement x="0" y="20" width="100" height="15"/><text><![CDATA[負責人:]]></text></staticText>
+            <textField><reportElement x="100" y="20" width="200" height="15"/><textFieldExpression><![CDATA[$P{PersionInCharge}]]></textFieldExpression></textField>
+            <staticText><reportElement x="0" y="40" width="100" height="15"/><text><![CDATA[稅籍號碼:]]></text></staticText>
+            <textField><reportElement x="100" y="40" width="200" height="15"/><textFieldExpression><![CDATA[$P{TaxNo}]]></textFieldExpression></textField>
+            <staticText><reportElement x="0" y="60" width="100" height="15"/><text><![CDATA[地址:]]></text></staticText>
+            <textField><reportElement x="100" y="60" width="300" height="15"/><textFieldExpression><![CDATA[$P{Address}]]></textFieldExpression></textField>
+            <staticText><reportElement x="0" y="80" width="100" height="15"/><text><![CDATA[電話:]]></text></staticText>
+            <textField><reportElement x="100" y="80" width="200" height="15"/><textFieldExpression><![CDATA[$P{PhoneNo}]]></textFieldExpression></textField>
+        </band>
+    </pageHeader>
+
+    <!-- Column Header -->
+    <columnHeader>
+        <band height="20">
+            <staticText><reportElement x="0" y="0" width="60" height="20"/><text><![CDATA[月份]]></text></staticText>
+            <staticText><reportElement x="60" y="0" width="80" height="20"/><text><![CDATA[公司車數]]></text></staticText>
+            <staticText><reportElement x="140" y="0" width="80" height="20"/><text><![CDATA[公司車營業額]]></text></staticText>
+            <staticText><reportElement x="220" y="0" width="80" height="20"/><text><![CDATA[寄行車數]]></text></staticText>
+            <staticText><reportElement x="300" y="0" width="80" height="20"/><text><![CDATA[寄行車營業額]]></text></staticText>
+        </band>
+    </columnHeader>
+
+    <!-- Detail Band -->
+    <detail>
+        <band height="20">
+            <textField><reportElement x="0" y="0" width="60" height="20"/><textFieldExpression><![CDATA[$F{Month}]]></textFieldExpression></textField>
+            <textField><reportElement x="60" y="0" width="80" height="20"/><textFieldExpression><![CDATA[$F{Company}]]></textFieldExpression></textField>
+            <textField><reportElement x="140" y="0" width="80" height="20"/><textFieldExpression><![CDATA[$F{VolumeOfCompany}]]></textFieldExpression></textField>
+            <textField><reportElement x="220" y="0" width="80" height="20"/><textFieldExpression><![CDATA[$F{Reliable}]]></textFieldExpression></textField>
+            <textField><reportElement x="300" y="0" width="80" height="20"/><textFieldExpression><![CDATA[$F{VolumeOfReliable}]]></textFieldExpression></textField>
+        </band>
+    </detail>
+
+    <!-- Page Footer -->
+    <pageFooter>
+        <band height="20">
+            <textField pattern="Page {0}">
+                <reportElement x="450" y="0" width="85" height="20"/>
+                <textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+            </textField>
+        </band>
+    </pageFooter>
+</jasperReport>

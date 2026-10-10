@@ -1,0 +1,77 @@
+<div id="LineMessageEditor" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content bg-dark text-white" style="border: 2px solid white;"> <!-- 加入白色邊框 -->
+      <div class="modal-header">
+        <h3 class="modal-title text-white">傳送訊息</h3>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="sendMessageForm">
+          <div class="row mt-1 ">
+
+            <div class="input-group col-md-6 mb-2">
+              <label for="driverName" class="input-group-text ">DriverName</label>
+              <input type=hidden  id="serialId" value=""  >
+              <input type=hidden  id="userId" value=""  >
+              <input type="text" id="driverName" class="form-control fc-0" aria-describedby="basic-addon1" readonly >
+            </div>
+
+            <div class="input-group col-md-6 mb-2">
+              <label for="tag" class="input-group-text ">Tag</label>
+              <input type="text" id="tag" class="form-control fc-0" aria-describedby="basic-addon1" readonly >
+              <button id="sync2Btn" class="btn btn-primary w-100">遠端同步</button>
+            </div>
+          </div>
+          <div id="mainRow" class="row mt-1">
+            <!-- 左邊按鈕區 -->
+            <div id="columnA" class="col-md-4">
+              <div class="row mb-2">
+                <div class="col-6">
+                  <button id="syncBtn" class="btn btn-primary w-100">遠端同步1</button>
+                </div>
+                <div class="col-6">
+                  <button id="uploadBtn" class="btn btn-primary w-100">上傳圖片</button>
+                </div>
+              </div>
+              <div class="row mb-2">
+                <div class="col-6">
+                  <button id="clearBtn" class="btn btn-primary w-100">重置預覽</button>
+                </div>
+                <div class="col-6">
+                  <label id="dropzoneLabel"  class="btn btn-primary w-100 d-inline-block" style="height: 38px;">
+                    拖曳上傳
+                    <input id="fileInput" type="file" accept="image/*" hidden multiple>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <!-- 右邊圖片預覽區 -->
+            <div id="columnB" class="col-md-8">
+              <div class="border rounded p-1 bg-light" style="height: 150px; overflow-x: auto; overflow-y: hidden;">
+                <div id="previewArea" class="d-flex flex-nowrap gap-2">
+                  <!-- 預覽圖片會加在這裡，每張圖片固定大小 -->
+                  <!-- <img src="xxx.jpg" class="preview-thumb"> -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-1">
+            <div class="col-sm-12">
+              <label for="message" class="input-group-text ">Message</label>
+              <div class="position-relative has-icon-left">
+                <textarea type="text" id="message" class="form-control fc-0"></textarea>
+                <div class="form-control-position pl-1"><i class="ft-message-circle"></i></div>
+              </div>
+
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="testBtn" class="btn btn-toolbar" >測試</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
+        <button type="submit" id="btnSubmit" class="btn btn-primary">發送</button>
+      </div>
+    </div>
+  </div>
+</div>

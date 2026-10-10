@@ -1,0 +1,81 @@
+
+<div id="carInfoEditor" class="modal fade" tabindex="-1" role="dialog" >
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content bg-dark text-white" style="border: 2px solid white;"> <!-- 加入白色邊框 -->
+            <div class="modal-header">
+                <h3 class="modal-title text-white">車輛訊息</h3>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="editForm">
+                    <div class="row mt-0 ">
+                        <!-- userId -->
+                        <div class="input-group col-md-4 mb-2">
+                            <label for="carno" class="input-group-text ">車牌號</label>
+                            <input type=hidden  id="carseq"  value=""  >
+                            <input type="text" id="carno"   class="form-control fc-0" aria-describedby="basic-addon1" readonly >
+                        </div>
+                        <!-- displayName Line User 本身登錄名稱-->
+                        <div class="input-group col-md-4 mb-2">
+                            <label for="orlicense" class="input-group-text ">原車牌號</label>
+                            <input type="text" id="orlicense"  class="form-control fc-0" aria-describedby="basic-addon1" readonly >
+                        </div>
+                        <div class="input-group col-md-4 mb-2">
+                            <label class="input-group-text " for="str_caryear">出廠年份</label>
+                            <input type="text" class="form-control  fc-0"
+                                   id="str_caryear" name="str_caryear"    aria-describedby="basic-addon1" readonly>
+                        </div>
+                    </div>
+
+                    <div class="row mt-0">
+                        <!-- mechanicss -->
+                        <div class="input-group col-md-4 mb-1">
+                            <label class="input-group-text " for="mechanicss">引擎號</label>
+                            <input type="text" class="form-control  fc-0"
+                                   id="mechanicss" name="mechanicss"   aria-describedby="basic-addon1" readonly>
+                        </div>
+                        <!-- carlineno -->
+                        <div class="input-group col-md-4 mb-1">
+                            <label class="input-group-text ">車身號</label>
+                            <input type="text" class="form-control  fc-0"
+                                   id="carlineno" name="carlineno" aria-describedby="basic-addon1" readonly>
+                        </div>
+                        <!-- pipeamount -->
+                        <div class="input-group col-md-4 mb-1">
+                            <label class="input-group-text " for="pipeamount">排氣量</label>
+                            <input type="text" class="form-control  fc-0"
+                                   id="pipeamount" name="pipeamount" aria-describedby="basic-addon1" readonly>
+                        </div>
+                    </div>
+
+                    <div class="row mt-0">
+                        <!-- str_shingledat -->
+                        <div class="input-group col-md-4  mb-1">
+                            <label for="str_shingledat" class="input-group-text">原發照日</label>
+                            <input type="text" id="str_shingledat" name="str_shingledat" class="form-control update-enabled fc-0"  >
+                        </div>
+                        <!-- str_canceldate -->
+                        <div class="input-group col-md-4  mb-1">
+                            <label for="str_canceldate" class="input-group-text ">繳銷日</label>
+                            <input type="text" id="str_canceldate" name="str_canceldate"  class="form-control update-enabled fc-0" >
+                        </div>
+                        <div class="input-group col-md-4  mb-1">
+                            <label for="str_check_date" class="input-group-text ">指定驗車日</label>
+                            <input type="text" id="str_check_date" name="str_check_date"  class="form-control update-enabled fc-0" >
+                        </div>
+                    </div>
+                    <div class="row mt-0">
+                        <!-- remark (佔據兩倍寬度) -->
+                        <div class="input-group col-md-12  mb-1">
+                            <label for="remark" class="input-group-text ">說明</label>
+                            <input type="text" id="remark" name="remark"  class="form-control update-enabled fc-0">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
+            </div>
+        </div>
+    </div>
+</div>

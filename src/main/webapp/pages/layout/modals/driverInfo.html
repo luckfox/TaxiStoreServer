@@ -1,0 +1,93 @@
+
+<div id="driverInfo" class="modal fade" tabindex="-1" role="dialog" >
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content bg-dark text-white" style="border: 2px solid white;"> <!-- 加入白色邊框 -->
+            <div class="modal-header">
+                <h3 class="modal-title text-white">駕駛員資訊</h3>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="editForm">
+                    <div class="row mt-0 ">
+                        <!-- userId -->
+                        <div class="input-group col-md-4 mb-2">
+                            <label for="drivername" class="input-group-text ">姓名</label>
+                            <input type=hidden  id="driverseq"  value=""  >
+                            <input type="text" id="drivername"   class="form-control fc-0" aria-describedby="basic-addon1" readonly >
+                        </div>
+                        <!-- displayName Line User 本身登錄名稱-->
+                        <div class="input-group col-md-4 mb-2">
+                            <label for="id" class="input-group-text ">身分證號</label>
+                            <input type="text" id="id"  class="form-control fc-0" aria-describedby="basic-addon1" readonly >
+                        </div>
+                        <div class="input-group col-md-4 mb-2">
+                            <label class="input-group-text " for="specialcode">特別碼</label>
+                            <input type="text" class="form-control  fc-0"
+                                   id="specialcode" name="specialcode"    aria-describedby="basic-addon1" readonly>
+                        </div>
+                    </div>
+
+                    <div class="row mt-0">
+                        <!-- birthday -->
+                        <div class="input-group col-md-4 mb-1">
+                            <label class="input-group-text " for="str_birthday">生日</label>
+                            <input type="text" class="form-control  fc-0"
+                                   id="str_birthday" name="str_birthday"   aria-describedby="basic-addon1" readonly>
+                        </div>
+                        <!-- indate -->
+                        <div class="input-group col-md-4 mb-1">
+                            <label class="input-group-text ">受雇日期</label>
+                            <input type="text" class="form-control  fc-0"
+                                   id="str_indate" name="str_indate" aria-describedby="basic-addon1" readonly>
+                        </div>
+                        <!-- outdate -->
+                        <div class="input-group col-md-4 mb-1">
+                            <label class="input-group-text ">解約日期</label>
+                            <input type="text" class="form-control  fc-0"
+                                   id="str_outdate" name="str_outdate" aria-describedby="basic-addon1" readonly>
+                        </div>
+                    </div>
+
+                    <div class="row mt-0">
+                        <!-- portable -->
+                        <div class="input-group col-md-4  mb-1">
+                            <label for="portable" class="input-group-text">手機號</label>
+                            <input type="text" id="portable" name="portable" class="form-control fc-0"  >
+                        </div>
+                        <!-- commtel -->
+                        <div class="input-group col-md-4  mb-1">
+                            <label for="commtel" class="input-group-text ">通訊電話</label>
+                            <input type="text" id="commtel" name="commtel"  class="form-control fc-0" >
+                        </div>
+                        <div class="input-group col-md-4  mb-1">
+                            <label for="householdt" class="input-group-text ">戶籍電話</label>
+                            <input type="text" id="householdt" name="householdt"  class="form-control fc-0" >
+                        </div>
+                    </div>
+                    <div class="row mt-0">
+                        <!-- commadd -->
+                        <div class="input-group col-md-6  mb-1">
+                            <label for="commadd" class="input-group-text">通訊地址</label>
+                            <input type="text" id="commadd" name="commadd" class="form-control fc-0"  >
+                        </div>
+                        <!-- householda -->
+                        <div class="input-group col-md-6  mb-1">
+                            <label for="householda" class="input-group-text ">戶籍地址</label>
+                            <input type="text" id="householda" name="householda"  class="form-control fc-0" >
+                        </div>
+                    </div>
+                    <div class="row mt-0">
+                        <!-- remark (佔據兩倍寬度) -->
+                        <div class="input-group col-md-12  mb-1">
+                            <label for="remark" class="input-group-text ">說明</label>
+                            <input type="text" id="remark" name="remark"  class="form-control fc-0">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
+            </div>
+        </div>
+    </div>
+</div>

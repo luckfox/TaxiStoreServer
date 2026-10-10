@@ -1,0 +1,20 @@
+
+# Maven 編譯產物
+target/
+
+# IntelliJ IDEA 個人設定
+.idea/
+*.iml
+
+# 日誌
+*.log
+
+# 作業系統檔案
+.DS_Store
+Thumbs.db
+**/desktop.ini
+Thumbs.db
+
+# 本機環境設定（如含密碼，應避免上傳）
+.env
+.env.*

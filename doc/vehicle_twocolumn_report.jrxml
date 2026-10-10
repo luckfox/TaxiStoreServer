@@ -1,0 +1,66 @@
+<!-- Created with Jaspersoft Studio version 7.0.2.final using JasperReports Library version 7.0.2-31532122640f516c6d17238ae0e41a08113d5ac0  -->
+<jasperReport name="VehicleTwoColumnReport" language="java" columnCount="2" pageWidth="595" pageHeight="842" columnWidth="250" columnSpacing="20" leftMargin="30" rightMargin="30" topMargin="20" bottomMargin="20" uuid="e2e5ae58-0c8a-40b5-a92c-4ec0f0c7b8ff">
+	<parameter name="company_name" class="java.lang.String"/>
+	<parameter name="report_year" class="java.lang.String"/>
+	<parameter name="report_month" class="java.lang.String"/>
+	<parameter name="person_in_charge" class="java.lang.String"/>
+	<parameter name="report_date" class="java.lang.String"/>
+	<field name="id" class="java.lang.Integer"/>
+	<field name="car_no" class="java.lang.String"/>
+	<field name="licence_give" class="java.sql.Date"/>
+	<field name="licence_cancel" class="java.sql.Date"/>
+	<title height="40">
+		<element kind="staticText" uuid="6ca05313-f9f8-4bcd-8776-26519c89987a" x="0" y="0" width="535" height="30" fontSize="16.0" bold="true" hTextAlign="Center">
+			<text><![CDATA[車輛數申報表]]></text>
+		</element>
+	</title>
+	<pageHeader height="25">
+		<element kind="textField" uuid="1f074026-4c98-46f1-8d4c-40314a915f64" x="0" y="0" width="300" height="20">
+			<expression><![CDATA["公司名稱: " + $P{company_name}]]></expression>
+		</element>
+		<element kind="textField" uuid="b79d7e16-c0c7-4c35-b78b-9bbe820098c5" x="300" y="0" width="235" height="20" hTextAlign="Right">
+			<expression><![CDATA[$P{report_year} + "年" + $P{report_month} + "-" + (Integer.parseInt($P{report_month})+2 < 10 ? "0" : "") + (Integer.parseInt($P{report_month})+2) + "月"]]></expression>
+		</element>
+	</pageHeader>
+	<columnHeader height="20">
+		<element kind="staticText" uuid="f549a7b0-8095-4c3c-853e-9ba9c557fe1d" x="0" y="0" width="30" height="20" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[序號]]></text>
+		</element>
+		<element kind="staticText" uuid="63b05490-8660-47dd-853b-f9d69919b698" x="35" y="0" width="60" height="20" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[車號]]></text>
+		</element>
+		<element kind="staticText" uuid="8023c003-e0be-4353-92d8-711aa4f83a17" x="100" y="0" width="80" height="20" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[掛牌日期]]></text>
+		</element>
+		<element kind="staticText" uuid="47d4b7e0-e708-4708-95f8-63606cbaa383" x="185" y="0" width="80" height="20" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[繳銷日期]]></text>
+		</element>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<element kind="textField" uuid="a38d4489-e7f0-4601-a981-0157382b22ff" x="0" y="0" width="30" height="20">
+				<expression><![CDATA[$F{id}]]></expression>
+			</element>
+			<element kind="textField" uuid="e293fa79-1086-4821-a242-185129ba5b11" x="35" y="0" width="60" height="20">
+				<expression><![CDATA[$F{car_no}]]></expression>
+			</element>
+			<element kind="textField" uuid="765f99b0-b6d7-4e49-ad4e-fc235e2d72df" x="100" y="0" width="80" height="20">
+				<expression><![CDATA[$F{licence_give}]]></expression>
+			</element>
+			<element kind="textField" uuid="d3395e41-a93b-4277-bed3-c7aa5cdda175" x="185" y="0" width="80" height="20">
+				<expression><![CDATA[$F{licence_cancel}]]></expression>
+			</element>
+		</band>
+	</detail>
+	<pageFooter height="40">
+		<element kind="textField" uuid="20d2a8bf-216a-47ef-bd88-1b2850d6967d" x="0" y="0" width="200" height="20">
+			<expression><![CDATA["公司: " + $P{company_name}]]></expression>
+		</element>
+		<element kind="textField" uuid="8b47c66e-e26e-4b5f-99da-77aec83065a3" x="0" y="20" width="200" height="20">
+			<expression><![CDATA["負責人: " + $P{person_in_charge}]]></expression>
+		</element>
+		<element kind="textField" uuid="bf50e50d-b9c1-4217-978b-38d8602069c7" x="350" y="20" width="180" height="20" hTextAlign="Right">
+			<expression><![CDATA["製表日期: " + $P{report_date}]]></expression>
+		</element>
+	</pageFooter>
+</jasperReport>

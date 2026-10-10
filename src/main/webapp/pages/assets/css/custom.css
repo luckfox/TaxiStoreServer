@@ -1,0 +1,221 @@
+
+/*
+避免因chrome等自動填入破壞元素原有的顏色樣態
+*/
+input.update-enabled:-webkit-autofill {
+    box-shadow: 0 0 0px 1000px lightslategray inset !important;
+    -webkit-box-shadow: 0 0 0px 1000px lightslategray inset !important;
+    -webkit-text-fill-color: inherit !important;
+    transition: background-color 9999s ease-in-out 0s !important;
+}
+.main-menu-content li {
+    Font-size: 25px;
+}
+
+.menu-content li {
+    Font-size: 18px;
+}
+.input-group-text2 {
+    font-size:1.5rem;
+    color: white;
+    background-color: #1b2942;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.input-group-text {
+    font-size:1.5rem;
+    color: white;
+    background-color: #1b2942;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.no-wrap-row {
+    display: flex;
+    flex-wrap: nowrap;   /* 禁止換行 */
+    align-items: center; /* 垂直置中 */
+    gap: 0.5rem;          /* 元素間距可依需求調整 */
+    overflow-x: auto;     /* 若真的太擠，就可以橫向捲動 */
+}
+.fc-1 {
+    font-size:1.5rem;
+    background-color: white !important;
+    color: black;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.fc-1[disabled="disabled"]
+{
+    color: black;
+}
+/*
+ 底色為灰色，前景顏色為白色，並且不允許換行，如果文字超過欄位寬度，則會以...取代
+
+ */
+.fc-0 {
+    font-size: 1.5rem;                       /* 字體大小設為 1.5 倍的根字體大小，夠大，適合當標籤或按鈕 */
+    background-color: lightslategray !important;  /* 背景色設定為灰藍色，還用 !important 搶戲壓過別人 */
+    color: white;                            /* 文字顏色設為白色，和背景對比強烈，看起來很清楚 */
+    white-space: nowrap;                     /* 不允許自動換行，讓文字乖乖待在一行 */
+    overflow: hidden;                        /* 超出容器範圍的文字會被藏起來（不會外溢） */
+    text-overflow: ellipsis;
+    padding-left: 5px;
+    padding-right: 5px;                      /* 左右各加 5px 的內距，防止字貼邊，看起來有呼吸感 */
+}
+
+.fc-0[disabled="disabled"] {
+    color: black;                            /* 如果這個元素被設為 disabled，文字顏色就改為黑色（灰階感覺） */
+}
+.fc-0:not([disabled]):hover {
+    color: yellow !important;                /* 當滑鼠移過去，且不是 disabled，文字顏色變成亮眼的黃色 */
+    cursor: pointer;                         /* 滑鼠變小手指，告訴使用者：嘿，我是可以點的唷！ */
+}
+
+
+textarea:not([disabled]):hover
+{
+    color: yellow !important;
+    cursor: pointer  ;
+}
+
+
+.list-window {
+    position: absolute;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    z-index: 1050; /* Bootstrap modal层次 */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    max-height: 300px;
+    overflow-y: auto;
+    display: none; /* 初始隐藏 */
+    border-radius: 0.25rem;
+}
+
+.list-window .list-group-item {
+    cursor: pointer;
+}
+
+.list-window .list-group-item:hover {
+    background-color: #f8f9fa; /* Bootstrap hover色 */
+}
+
+.form-select {
+    display: block;               /* 确保它作为块状元素，便于设置宽度 */
+    width: 150px;                 /* 设置固定宽度，根据需要调整值 */
+    white-space: nowrap;          /* 防止文字换行 */
+    overflow: hidden;             /* 隐藏溢出部分 */
+    text-overflow: ellipsis;      /* 用省略号表示被隐藏的文字 */
+    text-align: left;             /* 可选，调整文字对齐方式 */
+}
+
+.main-menu-content li
+{
+    Font-size:25px;
+}
+.menu-content li
+{
+    Font-size:18px;
+}
+
+#VI_table.dataTable tbody td,
+#VI_table.dataTable thead th,
+#VI_table.dataTable tfoot th {
+    color: yellow !important;
+}
+#VI_table.table-striped tbody tr td,
+#VI_table.table-bordered tbody tr td {
+    color: yellow !important;
+}
+#VI_table th,
+#VI_table td {
+    font-size: 18px; /* 這裡可以調整成你要的大小 */
+}
+
+#VI_table {
+    width: 100% !important;
+    border-collapse: collapse;
+    table-layout: fixed;  /* 🔹關鍵：固定表格欄寬 */
+}
+
+#VI_table th, #VI_table td {
+    white-space: nowrap;       /* 不自動換行 */
+    overflow: hidden;          /* 超出不顯示 */
+    text-overflow: ellipsis;   /* 顯示省略號 ... */
+    padding: 4px 8px;          /* 壓縮 padding */
+    vertical-align: middle;
+}
+
+.dataTables_wrapper .row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+/* 當滑鼠經過 元素時，滑鼠會變成手指狀。 */
+.cursor-pointer-hover:hover
+{
+    cursor: pointer;
+}
+/* "Show N entries" 文字 */
+.dataTables_length label {
+    color: yellow !important;
+}
+/* 設定 Dropdown 整體樣式 */
+.dropdown-menu {
+    min-width: 320px;
+    border: 1px solid #000;
+    padding: 0;  /* 移除內邊距，讓內容貼合外框 */
+}
+
+/* 標頭樣式改為按鈕風格 */
+.dropdown-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+}
+
+.dropdown-header button {
+    flex: 1;
+    background-color: #343a40; /* 深色背景 */
+    color: white; /* 白色字體 */
+    font-weight: bold;
+    border: none;
+    padding: 10px;
+    text-align: center;
+}
+
+/* 每個欄位之間加一點間隔 */
+.dropdown-header button:not(:last-child) {
+    border-right: 1px solid #6c757d; /* 欄位間的分隔線 */
+}
+
+/* 下拉選單每個項目的樣式 */
+.dropdown-item {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+    padding: 10px;
+    background-color: white;
+}
+
+/* 按鈕內的文字樣式 */
+.dropdown-item span {
+    flex: 1;
+    text-align: center;
+}
+
+/* 滑鼠懸停時的效果 */
+.dropdown-item:hover {
+    background-color: #e9ecef;
+}
+
+.single-ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#tableP4 td {
+    cursor: default;  /* 預設：非編輯欄位不顯示輸入游標 */
+}
+
+#tableP4 td.editable {
+    cursor: text;     /* 只有 .editable 欄位，游標才變成文字編輯型 */
+}

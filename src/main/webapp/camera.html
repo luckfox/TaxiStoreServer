@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>攝影機拍照上傳</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        video, canvas { border: 1px solid black; }
+    </style>
+</head>
+<body>
+<h2>攝影機拍照並上傳</h2>
+
+<video id="video" width="400" height="300" autoplay></video>
+<br>
+<button id="captureBtn">拍照</button>
+<canvas id="canvas" width="400" height="300" style="display: none;"></canvas>
+<br>
+<button id="uploadBtn" style="display: none;">上傳圖片</button>
+
+<script>
+    // 取得攝影機畫面
+    navigator.mediaDevices.getUserMedia({ video: true })
+        .then(stream => {
+            document.getElementById("video").srcObject = stream;
+        })
+        .catch(err => console.error("無法開啟攝影機", err));
+
+    // 拍照並顯示
+    document.getElementById("captureBtn").addEventListener("click", function () {
+        let video = document.getElementById("video");
+        let canvas = document.getElementById("canvas");
+        let ctx = canvas.getContext("2d");
+
+        ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+        document.getElementById("uploadBtn").style.display = "inline";
+    });
+
+    // 上傳圖片到後端
+    document.getElementById("uploadBtn").addEventListener("click", function () {
+        let canvas = document.getElementById("canvas");
+        let imageData = canvas.toDataURL("image/png"); // 轉為 Base64
+
+        $.ajax({
+            type: "POST",
+            url: "UploadServlet",
+            data: { image: imageData },
+            success: function (response) {
+                alert("圖片上傳成功：" + response);
+            },
+            error: function () {
+                alert("上傳失敗");
+            }
+        });
+    });
+</script>
+</body>
+</html>

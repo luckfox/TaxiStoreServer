@@ -1,0 +1,13 @@
+label
+{
+    background-color:  lightslategray;
+    color:white;
+}
+
+/*.form-control:valid*/
+input
+{
+
+    background-color:  lightslategray!important;
+    color:white;
+}

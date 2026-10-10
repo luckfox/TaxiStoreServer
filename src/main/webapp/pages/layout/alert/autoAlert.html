@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>AutoAlert 類別示範</title>
+    <style>
+        .custom-alert {
+            position: fixed;
+            top: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #ffecb3;
+            color: #000;
+            padding: 15px 30px;
+            border: 2px solid #fbc02d;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            font-family: "Comic Sans MS", cursive, sans-serif;
+            font-size: 16px;
+            z-index: 9999;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            pointer-events: none;
+        }
+
+        .custom-alert.show {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+<script>
+    /**
+     * AutoAlert 類別 - 可以顯示會自動消失的 alert 訊息
+     */
+    class AutoAlert {
+        /**
+         * 建構子，可選擇客製化樣式選項（尚未實作太多，可以擴充）
+         * @param {Object} [options] - 設定選項
+         */
+        constructor(options = {}) {
+            this.options = options;
+        }
+
+        /**
+         * 顯示 alert 訊息
+         * @param {string} message - 要顯示的訊息
+         * @param {number} durationInSeconds - 幾秒後自動關閉
+         */
+        show(message, durationInSeconds = 3) {
+            const alertBox = document.createElement("div");
+            alertBox.className = "custom-alert";
+            alertBox.textContent = message;
+
+            document.body.appendChild(alertBox);
+
+            // 延遲加 show class，觸發 fade-in 動畫
+            requestAnimationFrame(() => alertBox.classList.add("show"));
+
+            // 自動關閉
+            setTimeout(() => {
+                alertBox.classList.remove("show");
+                setTimeout(() => {
+                    if (alertBox.parentElement) {
+                        alertBox.remove();
+                    }
+                }, 500);
+            }, durationInSeconds * 1000);
+        }
+    }
+
+    // 🧪 測試範例
+    // const myAlert = new AutoAlert();
+    myAlert.show("🥳 登登登～我三秒後自動退場！", 3);
+    setTimeout(() => myAlert.show("😎 再來一條警告！5秒結束～", 5), 1000);
+</script>
+
+</body>
+</html>
